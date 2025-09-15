@@ -1,0 +1,40 @@
+
+<div class="factura-container">
+  <h2>FACTURACION ISI</h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>COD</th>
+        <th>Cliente</th>
+        <th>Fecha Venta</th>
+        <th>Subtotal</th>
+        <th>Total</th>
+        <th>Accion</th>
+      </tr>
+    </thead>
+    <tbody>
+
+        @for(factura of lista_facturas$; track factura.id; let i = $index){
+        <tr>
+            <td>{{ i + 1 }}</td>
+            <td>{{ factura.codigo_Venta }}</td>
+            <td>{{ factura.clientesModelId }}</td>
+            <td>{{ factura.fechaVenta }}</td>
+            <td>{{ factura.total_Venta }}</td>
+            <td>{{ factura.estado_Venta }}</td>
+            <td>
+        </tr>
+        }
+
+    </tbody>
+    <tfoot>
+    </tfoot>
+  </table>
+  <div><button type="button" class="btn btn-primary" (click)="imprimir()">Imprimir Tabla</button></div>
+</div>
+<script>
+
+</script>
+
